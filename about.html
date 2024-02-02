@@ -3,24 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Band</title>
     <link rel="stylesheet" href="styles.css">
-
+    <link rel="icon" href="favicons.ico" type="image/x-icon">
+    <title>The Band</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-image: url("/abc.png"); 
+            background-image: url("/abc.png");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             color: #ff5722;
-            position: relative; 
+            position: relative;
+        }
+
+        header {
+            color: #ff5722;
+            padding: 20px 0 0;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         footer {
-            background-color: black;
-            color: white;
+            background-color: #000;
+            color: #ff5722;
             text-align: center;
             padding: 10px;
             position: fixed;
@@ -28,86 +43,99 @@
             width: 100%;
         }
 
-        .mission {
+        .feedback-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .feedback-item {
+            background-color: #ff5722;
+            color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px;
+            width: calc(50% - 20px); 
+        }
+
+        .founder-ceo,
+        h2 {
             text-align: center;
         }
 
-        pre {
-            font-family: inherit;
-            font-size: inherit;
-            margin: 0;
-        }
+        @media screen and (max-width: 600px) {
+            header {
+                font-size: 1.5em;
+            }
 
-        .feedback-left,
-        .feedback-right {
-            position: absolute;
-            background-color: #ff5722; 
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            max-width: 40%; 
-        }
-
-        .feedback-left {
-            left: 10px;
-            top: 10%; 
-        }
-
-        .feedback-right {
-            right: 10px;
-            top: 10%; 
+            .feedback-item {
+                width: calc(100% - 20px);
+            }
         }
     </style>
 </head>
 <body>
-
     <div class="-top -bar -black">
         <a href="/index.html" class="-bar-item -button">Home</a>
         <a href="/products.html" class="-bar-item -button">Products</a>
-        <a href="/about.html" class="-bar-item -button">About</a>
+        <a href="#members" class="-bar-item -button">About</a>
         <a href="/contact.html" class="-bar-item -button">Contact</a>
         <a href="/login.html" class="-bar-item -button" style="text-align: right;">Login</a>
     </div>
 
-    <div id="contact" class="-container -center -padding-32">
-        <h2 class="-wide">About us</h2>
-    </div>
+    <header>
+        <h1>About Us</h1>
+    </header>
 
-    <div class="mission">
-        <h2>Our Mission</h2>
-        <pre>At The Band, our mission is to bring joy and wonder into the lives of children and families through the 
-            enchanting world of 3D printed toys. We are dedicated to crafting imaginative, safe, and personalized play experiences 
-            that spark creativity and leave a lasting impact on every child's growth. By leveraging the magic of 3D printing 
-            technology, we aim to create a universe of unique toys that inspire laughter, learning, and endless adventures</pre>
-        <pre>
-            As pioneers in the realm of 3D printed toys, we envision a future where each child's playtime is an exploration of 
-            their imagination. Our vision is to be the leading provider of innovative and sustainable toy solutions, offering 
-            a diverse range of customizable designs that cater to the interests and preferences of every child
-        </pre>
-    </div>
+    <main>
+        <section>
+            <h2>Feedback</h2>
+            <div class="feedback-container">
+                <div class="feedback-item">
+                    <p>The 3D printed toys are amazing! My kids are so happy! The attention to detail and quality of craftsmanship are truly impressive.</p>
+                </div>
+                <div class="feedback-item">
+                    <p>Excellent service and high-quality toys. Thank you, The Band! The personalized touch in each toy makes a significant difference.</p>
+                </div>
+                <div class="feedback-item">
+                    <p>We recently purchased a set of 3D printed toys for our child's birthday, and the joy on their face was priceless. Truly magical creations!</p>
+                </div>
+                <div class="feedback-item">
+                    <p>Kudos to The Band for creating such innovative and engaging toys. Our family is now a loyal fan of your brand!</p>
+                </div>
+            </div>
+        </section>
 
-    
-    <div class="feedback-left">
-        The 3D printed toys are amazing! My kids are so happy!
-    </div>
+        <section>
+            <h2>Our Mission</h2>
+            <p>
+                At The Band, our mission is to bring joy and wonder into the lives of children and families through the 
+                enchanting world of 3D printed toys. We are dedicated to crafting imaginative, safe, and personalized play experiences 
+                that spark creativity and leave a lasting impact on every child's growth. By leveraging the magic of 3D printing 
+                technology, we aim to create a universe of unique toys that inspire laughter, learning, and endless adventures.
+        
+                As pioneers in the realm of 3D printed toys, we envision a future where each child's playtime is an exploration of 
+                their imagination. Our vision is to be the leading provider of innovative and sustainable toy solutions, offering 
+                a diverse range of customizable designs that cater to the interests and preferences of every child.
+            </p>
+        </section>
 
-    
-    <div class="feedback-right">
-        Excellent service and high-quality toys. Thank you, The Band!
-    </div>
-
-    <h2 class="mission">Meet Our Team</h2>
-    <div class="mission">
-        <h3>Mohammed Azmath Khan</h3>
-        <p>Founder and CEO</p>
-    </div>
-    <div class="mission">
-        <h3>Abdul Rafay</h3>
-        <p>Founder and CEO</p>
-    </div>
+        <section class="founder-ceo">
+            <h2>Meet the Team</h2>
+            <div>
+                <h3>Azmath Khan</h3>
+                <p>Founder CEO</p>
+            </div>
+            <div>
+                <h3>Abdul Rafay</h3>
+                <p>Founder CEO</p>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        &copy; 2024 The Band. All rights reserved.
+        &copy; 2024 Your Company. All rights reserved.
     </footer>
 </body>
 </html>
