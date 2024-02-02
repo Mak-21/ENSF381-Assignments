@@ -235,17 +235,14 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .-border-pale-red,.-hover-border-pale-red:hover{border-color:#ffe7e7!important}.-border-pale-green,.-hover-border-pale-green:hover{border-color:#e7ffe7!important}
 .-border-pale-yellow,.-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.-border-pale-blue,.-hover-border-pale-blue:hover{border-color:#e7ffff!important}
 div.polaroid {
-    width: 80%;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  
-  img {width: 100%}
-  
-  div.container {
-    text-align: center;
-    padding: 10px 20px;
-  }
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+div.container {
+  padding: 20px;
+}
   .grid-container {
     display: grid;
     gap: 20px;
@@ -283,26 +280,31 @@ div.polaroid {
   }
   
   .row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
+    display:flex;
+    flex-wrap:wrap;
+    padding: 10px;
   }
   
   /* Create four equal columns that sits next to each other */
   .column {
+    flex: 30%;
+    max-width: 30%;
+    padding: 50px;
+    
+  }
+  .column1 {
     flex: 25%;
     max-width: 25%;
     padding: 0 4px;
-    
+
   }
-  
-  .column img {
+  .column1 img {
     margin-top: 8px;
     vertical-align: middle;
   }
   
   /* Responsive layout - makes a two column-layout instead of four columns */
-  @media (max-width: 200px) {
+  @media (max-width: 800px) {
     .column {
       flex: 50%;
       max-width: 50%;
@@ -310,7 +312,7 @@ div.polaroid {
   }
   
   /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
     .column {
       flex: 100%;
       max-width: 100%;
