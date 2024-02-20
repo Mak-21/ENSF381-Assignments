@@ -1,0 +1,135 @@
+/* Universal Styles */
+* {
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.company-name {
+    color: white;
+}
+
+/* Navigation Bar Styles */
+nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: #333;
+}
+
+.nav-link {
+    padding: 10px 20px;
+    color: white; /* Assuming you want the text color to be white for contrast */
+    text-decoration: none; /* Optional: removes underline from links */
+}
+
+/* Main Content Styles */
+/* About Us Section */
+.about-us {
+    display: flex;
+    flex-direction: column; /* Stacks the h2 and p elements vertically */
+    align-items: left; /* Centers the items horizontally */
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+    text-align: left; /* Centers the text within the flex container */
+}
+
+
+/* Shop Now Button */
+.shop-now-btn {
+    background-color: #4CAF50; /* Green */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+    margin: 20px;
+    border: none; /* Removes default button border */
+    color: white; /* Text color */
+    text-decoration: none; /* Removes underline if the button is an <a> element */
+    display: inline-block; /* Allows the application of margin */
+}
+
+/* Customer Reviews Section */
+.customer-reviews {
+    display: flex;
+    flex-direction: column; /* Stack reviews vertically */
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+}
+
+.review {
+    margin-bottom: 10px; /* Spacing between reviews */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    padding: 10px;
+    margin: 0;
+    color: white; /* Sets the copyright notice to white */
+    text-align: center; /* Centers the copyright notice */
+}
+/* Header and Navigation Bar styles are assumed to be the same as on the homepage and are not repeated here */
+
+/* Main Content Styles */
+main {
+    background-color: #ddd;
+    padding: 20px;
+    margin: 20px;
+}
+
+/* Product List Section */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjusts the space between products */
+}
+
+/* Product Styling */
+.product {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    text-align: center; /* Centers the content */
+    width: calc(50% - 40px); /* Adjusts the width to fit 2 products per line, accounting for margin */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+.product:hover {
+    background-color: #ffffff;
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.price {
+    color: #007BFF;
+    font-weight: bold;
+}
+
+/* “Add to Cart” Button */
+button {
+    background-color: #4CAF 50;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    border: none;
+    color: white;
+    cursor: pointer; /* Changes the mouse cursor to a pointer on hover */
+}
+
+button:hover {
+    background-color: #45A049;
+}
+
+/* Footer styles are assumed to be the same as on the homepage and are not repeated here */
