@@ -1,8 +1,13 @@
 /* Universal Styles */
 * {
     font-family: Arial, sans-serif;
+    box-sizing: border-box;
 }
-
+body {
+    margin: 0;
+    padding:0; 
+    background-color: white;
+  }
 /* Header Styles */
 header {
     background-color: #333;
@@ -74,6 +79,8 @@ footer {
     margin: 0;
     color: white; /* Sets the copyright notice to white */
     text-align: center; /* Centers the copyright notice */
+    bottom:0;
+    width: 100%;
 }
 /* Header and Navigation Bar styles are assumed to be the same as on the homepage and are not repeated here */
 
@@ -82,6 +89,8 @@ main {
     background-color: #ddd;
     padding: 20px;
     margin: 20px;
+    border-radius: 5px;
+    min-height: calc(100vh - 300px);
 }
 
 /* Product List Section */
@@ -131,5 +140,63 @@ button {
 button:hover {
     background-color: #45A049;
 }
+.login-section {
+display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddd;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  position: relative;
+}
 
-/* Footer styles are assumed to be the same as on the homepage and are not repeated here */
+.login-form label {
+    display: block;
+    margin: 10px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    background-color: #fff; 
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc; 
+    
+}
+
+.login-form input::placeholder {
+    color: #ccc; 
+}
+
+.login-form input[type="submit"] {
+    background-color: #4CAF50; 
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    opacity: 0.5;
+    cursor: pointer;
+    border: none;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #45A049; 
+    opacity: 1.0;
+}
+
+.signup-section {
+    margin-top: 20px; 
+    position: absolute;
+    bottom: 0;
+}
+
+.signup-section a {
+    color: #007BFF; 
+    text-decoration: none;
+}
+
+.signup-section a:hover {
+    text-decoration: underline;
+}
