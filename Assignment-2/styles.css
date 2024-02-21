@@ -97,7 +97,8 @@ main {
 .product-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Adjusts the space between products */
+    gap: 20px; /* This sets the gap between the products */
+    justify-content: center; /* Adjusts the space between products */
 }
 
 /* Product Styling */
@@ -107,8 +108,10 @@ main {
     margin: 20px;
     border-radius: 10px;
     text-align: center; /* Centers the content */
-    width: calc(50% - 40px); /* Adjusts the width to fit 2 products per line, accounting for margin */
-    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Adds a subtle shadow to each product for depth */
+    transition: background-color 0.3s; /* Smooth transition for background color change on hover */
+    width: calc(50% - 40px); /* Adjusts the width to fit 2 products per line accounting for margin */
+    max-width: 350px; /* Includes padding and border in the element's total width and height */
 }
 
 .product:hover {
@@ -128,7 +131,7 @@ main {
 
 /* “Add to Cart” Button */
 button {
-    background-color: #4CAF 50;
+    background-color: #4CAF50;
     padding: 10px;
     border-radius: 5px;
     margin: 10px;
@@ -199,4 +202,9 @@ display: flex;
 
 .signup-section a:hover {
     text-decoration: underline;
+}
+@media (max-width: 768px) {
+    .product {
+        width: calc(100% - 40px); /* Full width minus the margin on smaller screens */
+    }
 }
