@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" type="image/png"  href="./images/logo.png"/>
+
+    <title>Signup - Evangelion</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+            <img src="./images/logo.png" alt="Company Logo"width="100">
+        </div>
+        <div class="company-name">
+            Evangelion
+        </div>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <a href="./index.html" class="nav-link">Home</a>
+        <a href="./products.html" class="nav-link">Products</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
+        <a href="./login.html" class="nav-link">Login</a> 
+    </nav>
+
+    <main>
+        <section class="login-section">
+            <form class="signup-form" autocomplete="on" method="post">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" required placeholder="Enter your username"><br>
+
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required placeholder="Enter your password"><br>
+
+                <label for="confirm-password">Confirm Password:</label><br>
+                <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm Password"><br>
+
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email" required placeholder="Enter your email">
+                
+                <input type="submit" value="Sign up"> <br>
+
+            </form>
+            
+            
+        </section>
+    </main>
+    
+        <div class="message-box"></div>
+    <footer class="footer">
+        <p>&copy; 2024 Companyco. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const signupForm = document.querySelector('.signup-form'); 
+            const messageBox = document.querySelector('.message-box');
+
+            signupForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirm-password').value;
+                const email = document.getElementById('email').value;
+
+                let errorMessage = '';
+
+                if (!username.match(/^[a-zA-Z][a-zA-Z0-9-_]{2,19}$/)) {
+                    errorMessage += 'Check the username. <br>';
+                }
+
+                if (!password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()-_=+\[\]{}|;:'",.<>?/`~])[A-Za-z\d!@#$%^&*()-_=+\[\]{}|;:'",.<>?/`~]{8,}$/)) {
+                    errorMessage += 'Check the password. <br>';
+                }
+
+                if (password !== confirmPassword) {
+                    errorMessage += 'Passwords do not match. <br>';
+                }
+
+                if (!email.match(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/)) {
+                    errorMessage += 'Check the email. ';
+                }
+
+                if (errorMessage === '') {
+                    showMessage('success', 'Signup successful');
+                } else {
+                    showMessage('error', errorMessage);
+                }
+            });
+
+            function showMessage(type, text) {
+                messageBox.innerHTML = `<p>${text}</p>`;
+                messageBox.classList.remove('success', 'error');
+                messageBox.classList.add(type);
+                messageBox.style.display = 'block';
+            }
+        });
+    </script>
+    
+
+</body>
+</html>

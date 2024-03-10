@@ -1,0 +1,94 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" type="image/png"  href="./images/logo.png"/>
+
+    <title>Login - Evangelion</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">
+		
+            <img src="./images/logo.png" alt="Company Logo"width = "100">
+        </div>
+        <div class="company-name">
+            Evangelion
+        </div>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <a href="./index.html" class="nav-link">Home</a>
+        <a href="./products.html" class="nav-link">Products</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
+        <a href="./login.html" class="nav-link">Login</a> 
+    </nav>
+
+    <main>
+        <section class="login-section">
+            <form class="login-form" autocomplete="on" method="post">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" required placeholder="Enter your username"><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+                <input type="submit" value="Log in"> <br>
+                <div class="signup-section">Don't have an account? <a href="./Signup.html"> Sign up here</a></div>
+            </form>
+            
+            
+        </section>
+    </main>
+    
+        <div class="message-box"></div>
+    <footer class="footer">
+        <p>&copy; 2024 Companyco. All rights reserved.</p>
+    </footer>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const loginForm = document.querySelector('.login-form');
+        const messageBox = document.querySelector('.message-box');
+
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const enteredUsername = document.getElementById('username').value;
+            const enteredPassword = document.getElementById('password').value;
+
+            fetch('https://jsonplaceholder.typicode.com/users')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch user data');
+                    }
+                    return response.json();
+                })
+                .then(users => {
+                    const user = users.find(user => user.username === enteredUsername && user.email === enteredPassword);
+                    if (user) {
+                        showMessage('success', 'Login successful!');
+                    } else {
+                        showMessage('error', 'Invalid username or password. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    showMessage('error', error.message);
+                });
+        });
+
+        function showMessage(type, text) {
+                messageBox.innerHTML = `<p>${text}</p>`;
+                messageBox.classList.remove('success', 'error');
+                messageBox.classList.add(type);
+                messageBox.style.display = 'block';
+            }
+        });
+</script>
+
+    
+</body>
+</html>
