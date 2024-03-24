@@ -99,21 +99,22 @@
 }
 
 .nav {
+  display: flex;
   
   justify-content: space-between;
+  flex: 4; /* Occupy remaining space */
+  overflow-x: auto; /* Allow horizontal scrolling if needed */
+  align-items: flex-end;
   
-   /* Adjust as needed, but ensure it's not set to '0' */
- 
 }
 
 .nav-link {
-  
-  
-  padding:  15rem; /* Adjust as needed but ensure it's not set to '0' */
-  margin: 0; /* Ensure this is set to '0' to not add extra space */
+  padding:  15px; /* Adjust padding as needed */
+  margin: 0px;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
 /* Add this only if you want to ensure that the links have equal spacing around them */
 .nav-link:not(:last-child) {
-  margin-right: 1rem; /* Adjust as needed */
+ margin-right: 1rem; /* Adjust as needed */
 }

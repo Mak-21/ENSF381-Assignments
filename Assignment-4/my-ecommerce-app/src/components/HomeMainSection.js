@@ -16,7 +16,10 @@ function HomeMainSection() {
       <section>
         <h2>About Us</h2>
         <p>Company’s mission and vision...</p>
-        <button to="./ProductPage">Shop Now</button>
+        <button onClick={() => {window.location.href = "./ProductPage"}}>Shop Now</button>
+    
+
+                        
       </section>
       <section>
         <h2>Customer Reviews</h2>
